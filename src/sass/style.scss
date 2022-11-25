@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	height: 200vh;
+	background-color: #fff;
+	color: #333;
+}
+nav {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 100px;
+
+	.logo {
+		position: fixed;
+		top: 0;
+		left: 5vw;
+		padding-top: 5vh;
+		font-size: 34px;
+
+		z-index: 100;
+		a {
+			text-decoration: none;
+			color: #333;
+		}
+	}
+
+	.menu-mobile {
+		width: 100vw;
+		height: 100px;
+		position: fixed;
+		background-color: #fff;
+
+		.menu-hamburger {
+			position: absolute;
+			top: 5vh;
+			right: 10vw;
+			padding: 5px 10px;
+			font-size: 42px;
+			border: none;
+			background-color: transparent;
+			color: #333;
+			cursor: pointer;
+			transform: scale(1) rotate(0);
+			transition: transform 0.3s linear;
+			z-index: 100;
+		}
+		.menu-hamburger:hover {
+			transform: scale(1.2) rotate(180deg);
+		}
+		.menu-list {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: #fff;
+			list-style: none;
+
+			a {
+				display: inline-block;
+				margin: 10px 0;
+				font-size: 34px;
+				color: #333;
+				text-decoration: none;
+				transform: scale(1);
+				transition: transform 0.3s linear;
+			}
+
+			a:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.menu-screen {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		.menu-list {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			list-style: none;
+
+			li {
+				padding: 5vh 20px;
+				font-size: 34px;
+				a {
+					color: #333;
+					text-decoration: none;
+				}
+			}
+
+			li:first-child {
+				background-color: #333;
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 992px) {
+	nav {
+		width: 95vw;
+		.logo {
+			position: relative;
+		}
+		.menu-screen {
+			display: flex;
+		}
+	}
+	.menu-mobile {
+		display: none;
+	}
+}
+
+@media (min-width: 1200px) {
+	nav {
+		width: 90vw;
+	}
+}
